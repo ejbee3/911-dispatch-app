@@ -20,7 +20,7 @@ async def make_tts_file(num_arr, test_num):
     for n in num_arr:
         word_arr.append(p.number_to_words(n))
     word_str = ' '.join(word_arr)
-    output_file = f"audio/test{test_num}.mp3"
+    output_file = f"audio/sample{test_num}.mp3"
     client = OpenAI(api_key=API_KEY)
     async with client.audio.speech.with_streaming_response.create(
         model="tts-1",
